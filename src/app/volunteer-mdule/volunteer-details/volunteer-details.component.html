@@ -1,0 +1,39 @@
+<div >
+    <form [formGroup]="formdetails">
+        <div class="form-group">
+            <label for="id">volunteer id:</label>
+            <input type="text" class="form-control" id="id" name="id" formControlName="id" />
+            <div class="alert alert-danger" *ngIf="formdetails.controls.id.errors?.required">This field is required</div>
+            <div class="alert alert-danger" *ngIf="formdetails.controls.id.errors?.minlength">This field must contains at least 3 chars</div>
+        </div>
+        <div class="form-group">
+            <label for="name">volunteer name:</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name" />
+            <div class="alert alert-danger" *ngIf="formdetails.controls.name.errors?.required">This field is required</div>
+        </div>
+        <div class="form-group">
+            <label for="tel">volunteer tel:</label>
+            <input type="text" class="form-control" id="tel" name="tel" formControlName="tel" />
+            <div class="alert alert-danger" *ngIf="formdetails.controls.tel.errors?.required">This field is required</div>
+            <div class="alert alert-danger" *ngIf="formdetails.controls.tel.errors?.maxlength">This field must contains maximum 10 chars</div>
+            <div class="alert alert-danger" *ngIf="formdetails.controls.tel.errors?.minlength">This field must contains minimum 7 chars</div>
+        </div>
+        <div class="form-group">
+            <label >sunday</label>
+            <input formControlName="sunday" type="checkbox" />
+            <label >monday</label>
+            <input formControlName="monday" type="checkbox" />
+            <label >tushday</label>
+            <input formControlName="tusday" type="checkbox" />
+            <label >wensday</label>
+            <input formControlName="wensday" type="checkbox" />
+            <label >thursday</label>
+            <input formControlName="thurhday" type="checkbox" />
+            <label >friday</label>
+            <input formControlName="friday" type="checkbox" />
+        </div>
+        <button class="btn btn-success" [disabled]="formdetails.invalid" (click)="saveVolunteer()">Save volunteer</button>
+    </form>
+</div>
+
+

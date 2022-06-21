@@ -1,0 +1,15 @@
+<ul>
+    <li *ngFor="let v of volunteersList">
+        <div class="row">
+            <div class="col-sm-2">
+                {{v.name}}
+            </div>
+            <div class="col-sm-4">
+                {{v.tel}}
+            </div>
+            <div class="col-sm-2" >
+                <button routerLink="/details/{{v.id}}" >Edit</button>
+            </div>
+        </div>
+    </li>
+</ul>

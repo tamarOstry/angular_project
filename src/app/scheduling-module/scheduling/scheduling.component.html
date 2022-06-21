@@ -1,0 +1,73 @@
+<form [formGroup]="schedulingForm">
+<h2 style="color:crimson">scheduling for this week:</h2>
+<br>
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Volunteer</th>
+    </tr>
+    <tr id="0">
+        <td [ngClass]="{'marked': schedulingForm.value.sunday}">sunday</td>
+        <td >
+            <select  formControlName="sunday" name="sunday" id="1"  >
+                <option *ngFor="let v of daysTrueOfVolunteers[0]">
+                    <p>{{v.name}}</p>
+                </option>
+            </select>
+        </td>
+    </tr>
+     <tr id="1">
+        <td [ngClass]="{'marked': schedulingForm.value.monday}">monday</td>
+        <td>
+        <select  formControlName="monday" name="monday" id="2">
+            <option *ngFor="let v of daysTrueOfVolunteers[1]" >
+                <p>{{v.name}}</p>
+            </option>
+        </select>
+    </td>
+    </tr>
+
+    <tr id="2">
+        <td [ngClass]="{'marked': schedulingForm.value.tusday}">tusday</td>
+        <td>
+        <select   formControlName="tusday" name="tusday" id="3">
+            <option *ngFor="let v of daysTrueOfVolunteers[2]" > 
+                <p>{{v.name}}</p>
+            </option>
+        </select>
+    </td>
+    </tr>
+    <tr id="3">
+        <td [ngClass]="{'marked': schedulingForm.value.wensday}">wensday</td>
+        <td>
+        <select  formControlName="wensday" name="wensday" id="4">
+            <option *ngFor="let v of daysTrueOfVolunteers[3]">
+                <p>{{v.name}}</p>
+            </option>
+        </select>
+    </td>
+    </tr>
+    <tr id="4">
+        <td [ngClass]="{'marked': schedulingForm.value.thurhday}">thurhday</td>
+        <td>
+        <select  formControlName="thurhday" name="thurhday" id="5" >
+            <option *ngFor="let v of daysTrueOfVolunteers[4]">
+                <p>{{v.name}}</p>
+            </option>
+        </select>
+    </td>
+    </tr>
+    <tr id="5">
+        <td [ngClass]="{'marked': schedulingForm.value.friday}">friday</td>
+        <td>
+        <select  formControlName="friday" name="friday" id="6" >
+            <option *ngFor="let v of daysTrueOfVolunteers[5]" >
+                <p>{{v.name}}</p>
+            </option>
+        </select>
+    </td>
+    </tr>
+</table>
+<br>
+<button class="btn btn-success"  (click)="saveScheduling()">save scheduling</button>
+</form>
